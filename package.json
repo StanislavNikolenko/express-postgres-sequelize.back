@@ -1,0 +1,32 @@
+{
+  "name": "my-class.express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "prestart": "npm run build",
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "format": "prettier --write \"src/**/*.{js,ts}\""
+  },
+  "dependencies": {
+    "@sequelize/postgres": "^7.0.0-alpha.43",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
