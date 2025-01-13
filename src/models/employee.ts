@@ -1,4 +1,4 @@
-import { sequelize } from '../services/lessons.db';
+import { sequelize } from '../services/db-service';
 import { DataTypes } from '@sequelize/core';
 
 export const Employee = () => {
