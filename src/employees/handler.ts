@@ -9,14 +9,20 @@ import { Employee } from '../models/employee'
  * - DELETE - delete employee entity.
  * ***/
 
-export const getEmployeeById = async (req: Request, res: Response) => {
-  console.log('get employee by id');
-  res.send('employee');
-}
-
 // Create.
 export const createEmployee = async (req: Request, res: Response) => {
   const userName = req.body.name;
   const employee = await Employee.create({ name: userName });
   res.send(employee).status(201);
+}
+
+// Read.
+export const getEmployeeById = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+  const employee = await Employee.findAll({
+    where: {
+      id: userId,
+    },
+  });
+  res.send(employee).status(200);
 }
