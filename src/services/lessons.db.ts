@@ -11,10 +11,10 @@ require('dotenv').config();
 
 export const sequelize = new Sequelize({
   dialect: PostgresDialect,
-  database: process.env.POSTGRES_DB_NAME,
-  user: process.env.POSTGRES_USERNAME,
-  password: process.env.POSTGRES_PASSWORD,
-  host: process.env.POSTGRES_HOST,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
   port: 5432,
   ssl: false,
   clientMinMessages: 'notice',
@@ -38,7 +38,7 @@ export const initializeModels = async () => {
   initLessonTeacher(sequelize);
 
   // Setup associations
-  setupAssociations();
+  // setupAssociations();
 
   // Sync database (create tables if they don't exist)
   // await sequelize.sync({ alter: true }); // Change to `{ force: true }` to reset tables
