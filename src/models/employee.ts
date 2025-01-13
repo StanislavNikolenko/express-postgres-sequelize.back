@@ -1,8 +1,7 @@
 import { sequelize } from '../services/db-service';
 import { DataTypes } from '@sequelize/core';
 
-export const Employee = () => {
-  return sequelize.define('Employee', {
+export const Employee = sequelize.define('Employee', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -14,5 +13,4 @@ export const Employee = () => {
   }, {
     tableName: 'employees',
     timestamps: false,
-  });
-};
+});

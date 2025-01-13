@@ -15,6 +15,10 @@ export const sequelize = new Sequelize({
 
 export const connect = async () => {
   try {
+    // Use synchronization for non production database only.
+    // if (process.env.DB_NAME?.endsWith('skeleton')) {
+    //   await sequelize.sync({ force: true });
+    // }
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
   } catch (error) {
