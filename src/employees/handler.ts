@@ -26,3 +26,19 @@ export const getEmployeeById = async (req: Request, res: Response) => {
   });
   res.send(employee).status(200);
 }
+
+// Update.
+export const updateEmployee = async (req: Request, res: Response) => {
+  console.log('update employee');
+  const userId = req.params.id;
+  const userName = req.body.name;
+  const employee = await Employee.update(
+    { name: userName },
+    {
+      where: {
+        id: userId,
+      },
+    },
+  );
+  res.send(employee).status(200);
+}
