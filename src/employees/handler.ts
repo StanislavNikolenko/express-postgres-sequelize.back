@@ -50,5 +50,5 @@ export const removeEmployee = async (req: Request, res: Response) => {
       id: userId,
     },
   });
-  res.sendStatus(200);
+  res.send().status(200);
 }
